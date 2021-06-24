@@ -163,6 +163,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="SS\Yetenekler.PNG" />
     <Content Include="Themes\Images\Adana 2.jpg" />
     <Content Include="Themes\Images\Adana.jpg" />
     <Content Include="Themes\Images\Adana3.jpg" />
