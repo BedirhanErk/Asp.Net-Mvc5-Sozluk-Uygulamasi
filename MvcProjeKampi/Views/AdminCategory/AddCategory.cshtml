@@ -4,18 +4,18 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />  
-<h1>Yeni Kategori Ekleme</h1>
+<h1>Yeni Kategori Ekle</h1>
 <br />
 @using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Kategori Adı")
         @Html.TextBoxFor(x => x.CategoryName, new { @class="form-control"})
-        @Html.ValidationMessageFor(x => x.CategoryName)
+        @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
         <br /><br />
         @Html.Label("Açıklama")
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryDescription)
+        @Html.ValidationMessageFor(x => x.CategoryDescription, "", new { @style = "color:red" })
         <br /><br />
         <button class="btn btn-primary">Ekle</button>
         <a href="/AdminCategory/Index" class="btn btn-warning">Geri Dön</a>

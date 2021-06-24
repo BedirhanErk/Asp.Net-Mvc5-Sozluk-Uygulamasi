@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
+    [Authorize]
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
