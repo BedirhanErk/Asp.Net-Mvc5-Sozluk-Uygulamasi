@@ -17,6 +17,7 @@
 
         @Html.HiddenFor(x => x.HeadingDate, new { @class = "form-control" })
         @Html.HiddenFor(x => x.WriterId, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.HeadingStatus, new { @class = "form-control" })
 
         @Html.Label("Kategori")
         @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })

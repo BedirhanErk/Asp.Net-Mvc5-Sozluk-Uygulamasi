@@ -1,10 +1,13 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using EntityLayer.Dtos;
 using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,12 +29,24 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddWriter(Writer writer)
+        public ActionResult AddWriter(WriterProfileEditDto writerProfileEditDto)
         {
-            ValidationResult results = writervalidator.Validate(writer);
+            IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()), new WriterManager(new EfWriterDal()));
+            ValidationResult results = writervalidator.Validate(writerProfileEditDto);
             if (results.IsValid)
             {
-                wm.WriterAdd(writer);
+                if (writerProfileEditDto.WriterImage != null)
+                {
+                    if (Request.Files.Count > 0)
+                    {
+                        string filesname = Path.GetFileName(Request.Files[0].FileName);
+                        string extension = Path.GetExtension(Request.Files[0].FileName);
+                        string road = "~/Image/" + filesname + extension;
+                        Request.Files[0].SaveAs(Server.MapPath(road));
+                        writerProfileEditDto.WriterImage = "/Image/" + filesname + extension;
+                    }
+                }
+                authService.WriterAdd(writerProfileEditDto);
                 return RedirectToAction("Index");
             }
             else
@@ -46,16 +61,38 @@ namespace MvcProjeKampi.Controllers
         [HttpGet]
         public ActionResult EditWriter(int id)
         {
-            var writervalue = wm.GetById(id);
-            return View(writervalue);
+            WriterProfileEditDto writerProfileEditDto = new WriterProfileEditDto
+            {
+                WriterId = id,
+                WriterMail = wm.GetById(id).WriterMail,
+                WriterName = wm.GetById(id).WriterName,
+                WriterSurname = wm.GetById(id).WriterSurname,
+                WriterAbout = wm.GetById(id).WriterAbout,
+                WriterImage = wm.GetById(id).WriterImage,
+                WriterTitle = wm.GetById(id).WriterTitle,
+                WriterStatus = wm.GetById(id).WriterStatus,
+            };
+            return View(writerProfileEditDto);
         }
         [HttpPost]
-        public ActionResult EditWriter(Writer writer)
+        public ActionResult EditWriter(WriterProfileEditDto writerProfileEditDto)
         {
-            ValidationResult results = writervalidator.Validate(writer);
+            IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()), new WriterManager(new EfWriterDal()));
+            ValidationResult results = writervalidator.Validate(writerProfileEditDto);
             if (results.IsValid)
             {
-                wm.WriterUpdate(writer);
+                if (writerProfileEditDto.WriterImage != null)
+                {
+                    if (Request.Files.Count > 0)
+                    {
+                        string filesname = Path.GetFileName(Request.Files[0].FileName);
+                        string extension = Path.GetExtension(Request.Files[0].FileName);
+                        string road = "~/Image/" + filesname + extension;
+                        Request.Files[0].SaveAs(Server.MapPath(road));
+                        writerProfileEditDto.WriterImage = "/Image/" + filesname + extension;
+                    }
+                }
+                authService.WriterEdit(writerProfileEditDto);
                 return RedirectToAction("Index");
             }
             else

@@ -18,7 +18,8 @@ namespace MvcProjeKampi.Controllers
         MessageValidator messagevalidator = new MessageValidator();
         public ActionResult Inbox()
         {
-            var messageList = mm.GetListInbox();
+            var p = (string)Session["AdminUserName"];
+            var messageList = mm.GetListInbox(p);
             return View(messageList);
         }
         public ActionResult GetInboxMessageDetail(int id)
@@ -30,7 +31,8 @@ namespace MvcProjeKampi.Controllers
         }
         public ActionResult Sendbox()
         {
-            var messageList = mm.GetListSendbox();
+            var p = (string)Session["AdminUserName"];
+            var messageList = mm.GetListSendbox(p);
             return View(messageList);
         }
         public ActionResult GetSendboxMessageDetail(int id)
@@ -69,11 +71,12 @@ namespace MvcProjeKampi.Controllers
         [ValidateInput(false)]
         public ActionResult NewMessage(Message message)
         {
+            var sender = (string)Session["AdminUserName"];
             ValidationResult results = messagevalidator.Validate(message);
             if (results.IsValid)
             {
-                //Session'dan al
-                message.SenderMail = "admin@gmail.com";
+                message.SenderMail = sender;
+                message.SenderStatus = true;
                 message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 mm.MessageAdd(message);
                 return RedirectToAction("Sendbox");
@@ -94,7 +97,8 @@ namespace MvcProjeKampi.Controllers
         }
         public ActionResult GetListDraft()
         {
-            var draftList = mm.GetListDraft();
+            var p = (string)Session["AdminUserName"];
+            var draftList = mm.GetListDraft(p);
             return View(draftList);
         }
         public ActionResult GetDraftMessageDetail(int id)
@@ -107,28 +111,38 @@ namespace MvcProjeKampi.Controllers
         [ValidateInput(false)]
         public ActionResult SaveDraft(Message msg)
         {
+            var sender = (string)Session["AdminUserName"];
             msg.Draft = true;
             msg.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            //Sesion'dan al
-            msg.SenderMail = "admin@gmail.com";
+            msg.SenderMail = sender;
             mm.MessageAdd(msg);
             return RedirectToAction("GetListDraft");
         }
         public ActionResult TrashList()
         {
-            var trash = mm.GetListTrash();
+            var p = (string)Session["AdminUserName"];
+            var trash = mm.GetListTrash(p);
             return View(trash);
         }
         public ActionResult MakePassive(int id)
         {
+            var p = (string)Session["AdminUserName"];
             var message = mm.GetById(id);
-            message.Status = true;
+            if (message.ReceiverMail == p)
+            {
+                message.ReceiverStatus = true;
+            }
+            else if (message.SenderMail == p)
+            {
+                message.SenderStatus = false;
+            }
             mm.MessageDelete(message);
             return RedirectToAction("TrashList");
         }
         public ActionResult Delete(int id)
         {
             var message = mm.GetById(id);
+            message.ReceiverDelete = true;
             mm.MessageFullyDelete(message);
             return RedirectToAction("TrashList");
         }

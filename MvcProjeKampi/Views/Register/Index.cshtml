@@ -1,4 +1,4 @@
-﻿
+﻿@using CaptchaMvc.HtmlHelpers
 @{
     Layout = null;
 }
@@ -24,8 +24,7 @@
                     <div class="login-wrap py-5">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(/Themes/Login/images/bg.jpg);"></div>
                         <h3 class="text-center mb-0">Hoşgeldiniz</h3>
-                        @*<p class="text-center">Lütfen bilgilerinizi giriniz...</p>*@
-                        @using (Html.BeginForm("Index", "Register", FormMethod.Post))
+                        @using (Html.BeginForm("Index", "Register", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "fromCaptcha" }))
                         {
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
@@ -34,6 +33,10 @@
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
                                 <input type="password" name="AdminPassword" class="form-control" placeholder="Şifre" required>
+                            </div>
+                            <div class="form-group">
+                                    @Html.MathCaptcha()
+                                <p class="text-danger">@ViewBag.ErrorMessage</p>
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="submitButton" class="btn form-control btn-primary rounded submit px-3">Kayıt Ol</button>

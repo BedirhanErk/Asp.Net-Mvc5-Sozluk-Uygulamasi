@@ -18,12 +18,17 @@ namespace BusinessLayer.Concrete
         }
         public Heading GetById(int id)
         {
-            return _headingDal.Get(x=>x.HeadingId == id);
+            return _headingDal.Get(x => x.HeadingId == id);
         }
 
         public List<Heading> GetList()
         {
             return _headingDal.List();
+        }
+
+        public List<Heading> GetListByWriter(int id)
+        {
+            return _headingDal.List(x => x.WriterId == id && x.HeadingStatus == true);
         }
 
         public void HeadingAdd(Heading heading)
@@ -32,7 +37,7 @@ namespace BusinessLayer.Concrete
         }
 
         public void HeadingDelete(Heading heading)
-        {         
+        {
             _headingDal.Update(heading);
         }
 

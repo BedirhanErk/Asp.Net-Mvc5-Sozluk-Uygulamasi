@@ -43,7 +43,8 @@ namespace MvcProjeKampi.Controllers
             //var trashnumber = mm.GetListTrash().Count().ToString();
             //ViewBag.tn = trashnumber;
 
-            var unRead = mm.GetUnReadMessageForInbox().Count().ToString();
+            var p = (string)Session["AdminUserName"];
+            var unRead = mm.GetUnReadMessageForInbox(p).Count().ToString();
             ViewBag.unr = unRead;
 
             var unReadContact = cm.GetUnReadMessageForContact().Count().ToString();

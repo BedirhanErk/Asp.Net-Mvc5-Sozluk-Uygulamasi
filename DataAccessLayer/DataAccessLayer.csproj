@@ -164,6 +164,18 @@
     <Compile Include="Migrations\202106222011136_Mig22_add_skill.designer.cs">
       <DependentUpon>202106222011136_Mig22_add_skill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106251929346_Mig23_Writer_Change.cs" />
+    <Compile Include="Migrations\202106251929346_Mig23_Writer_Change.designer.cs">
+      <DependentUpon>202106251929346_Mig23_Writer_Change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106281421063_Mig24_message_change.cs" />
+    <Compile Include="Migrations\202106281421063_Mig24_message_change.designer.cs">
+      <DependentUpon>202106281421063_Mig24_message_change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106281503411_Mig25_message_change.cs" />
+    <Compile Include="Migrations\202106281503411_Mig25_message_change.designer.cs">
+      <DependentUpon>202106281503411_Mig25_message_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -243,6 +255,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106222011136_Mig22_add_skill.resx">
       <DependentUpon>202106222011136_Mig22_add_skill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251929346_Mig23_Writer_Change.resx">
+      <DependentUpon>202106251929346_Mig23_Writer_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106281421063_Mig24_message_change.resx">
+      <DependentUpon>202106281421063_Mig24_message_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106281503411_Mig25_message_change.resx">
+      <DependentUpon>202106281503411_Mig25_message_change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

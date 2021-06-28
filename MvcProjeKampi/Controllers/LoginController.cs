@@ -17,7 +17,7 @@ namespace MvcProjeKampi.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
-        IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()));
+        IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()),new WriterManager(new EfWriterDal()));
 
         [HttpGet]
         public ActionResult Index()
@@ -43,7 +43,33 @@ namespace MvcProjeKampi.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index");
+            return RedirectToAction("Headings","Default");
+        }
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult WriterLogin(WriterLoginDto writerLoginDto)
+        {
+            if (authService.WriterLogin(writerLoginDto))
+            {
+                FormsAuthentication.SetAuthCookie(writerLoginDto.WriterMail, false);
+                Session["WriterMail"] = writerLoginDto.WriterMail;
+                return RedirectToAction("WriterProfile", "WriterPanel");
+            }
+            else
+            {
+                ViewData["ErrorMessage"] = "Kullanıcı adı veya şifre yanlış";
+                return View();
+            }
+        }
+        public ActionResult WriterLogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings","Default");
         }
     }
 }

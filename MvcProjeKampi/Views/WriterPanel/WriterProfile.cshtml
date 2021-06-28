@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Dtos.WriterProfileEditDto
+@{
+    ViewBag.Title = "WriterProfile";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<br />
+<div style="text-align:center">
+    <img src="@ViewBag.img" style="height:300px;border-radius:150px"/>
+    <h2>@ViewBag.nm @ViewBag.sn</h2>
+    <h4>@ViewBag.tit</h4>
+</div>
+<br />
+@using (Html.BeginForm("WriterProfile", "WriterPanel", FormMethod.Post, new { enctype ="multipart/form-data"}))
+{
+    <div class="form-group" method="post ">
+        @Html.HiddenFor(x => x.WriterId)
+        @Html.Label("Ad")
+        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterName, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Soyad")
+        @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterSurname, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Mail")
+        @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterMail, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Şifre")
+        @Html.TextBoxFor(x=>x.WriterPassword, new { @class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.WriterPassword, "", new { @style = "color:red"})
+        <br />
+        @Html.Label("Görsel")
+        <input type="file" name="WriterImage" required=""/>
+        <br /><br />
+        @Html.Label("Ünvan")
+        @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterTitle, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Hakkımda")
+        @Html.TextAreaFor(x => x.WriterAbout, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterAbout, "", new { @style = "color:red" })
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+}

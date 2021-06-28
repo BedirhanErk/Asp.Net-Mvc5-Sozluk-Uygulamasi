@@ -11,5 +11,9 @@ namespace BusinessLayer.Abstract
     {
         void Register(string adminMail, string password);
         bool Login(LoginDto loginDto);
+        void WriterRegister(string mail, string password);
+        bool WriterLogin(WriterLoginDto writerLoginDto);
+        void WriterEdit(WriterProfileEditDto writerProfileEditDto);
+        void WriterAdd(WriterProfileEditDto writerProfileEditDto);
     }
 }

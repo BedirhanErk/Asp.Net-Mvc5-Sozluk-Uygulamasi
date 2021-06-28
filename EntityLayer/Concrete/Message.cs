@@ -20,7 +20,9 @@ namespace EntityLayer.Concrete
         public string MessageContent { get; set; }
         public DateTime MessageDate { get; set; }
         public bool Draft { get; set; }
-        public bool Status { get; set; }
+        public bool ReceiverStatus { get; set; }
+        public bool SenderStatus { get; set; }
+        public bool ReceiverDelete { get; set; }
         public bool Read { get; set; }
     }
 }

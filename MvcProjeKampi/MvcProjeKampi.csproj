@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -58,6 +61,12 @@
       <HintPath>..\packages\FluentValidation.10.1.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -137,6 +146,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
@@ -148,6 +158,9 @@
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Controllers\WriterPanelContentController.cs" />
+    <Compile Include="Controllers\WriterPanelController.cs" />
+    <Compile Include="Controllers\WriterPanelMessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,6 +172,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -204,6 +218,22 @@
     <Content Include="Themes\Images\Gaziantep.jpg" />
     <Content Include="Themes\Images\Giresun.jpg" />
     <Content Include="Themes\Images\Çanakkale.jpg" />
+    <Content Include="Themes\login-form-20\css\bootstrap.min.css" />
+    <Content Include="Themes\login-form-20\css\bootstrap\mixins\_border-radius.css" />
+    <Content Include="Themes\login-form-20\css\bootstrap\mixins\_reset-text.css" />
+    <Content Include="Themes\login-form-20\css\bootstrap\mixins\_screen-reader.css" />
+    <Content Include="Themes\login-form-20\css\bootstrap\mixins\_text-hide.css" />
+    <Content Include="Themes\login-form-20\css\bootstrap\mixins\_visibility.css" />
+    <Content Include="Themes\login-form-20\css\bootstrap\utilities\_stretched-link.css" />
+    <Content Include="Themes\login-form-20\css\bootstrap\_media.css" />
+    <Content Include="Themes\login-form-20\css\style.css" />
+    <Content Include="Themes\login-form-20\images\bg.jpg" />
+    <Content Include="Themes\login-form-20\index.html" />
+    <Content Include="Themes\login-form-20\js\bootstrap.min.js" />
+    <Content Include="Themes\login-form-20\js\jquery.min.js" />
+    <Content Include="Themes\login-form-20\js\main.js" />
+    <Content Include="Themes\login-form-20\js\popper.js" />
+    <Content Include="Themes\login-form-20\main.html" />
     <Content Include="Themes\Login\css\bootstrap.min.css" />
     <Content Include="Themes\Login\css\bootstrap\mixins\_border-radius.css" />
     <Content Include="Themes\Login\css\bootstrap\mixins\_screen-reader.css" />
@@ -2490,9 +2520,131 @@
     <Content Include="Views\Skills\Index.cshtml" />
     <Content Include="Views\Skills\Add.cshtml" />
     <Content Include="Views\Skills\Update.cshtml" />
+    <Content Include="Views\Shared\_WriterLayout.cshtml" />
+    <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
+    <Content Include="Views\WriterPanel\WriterHeading.cshtml" />
+    <Content Include="Views\WriterPanel\NewHeading.cshtml" />
+    <Content Include="Views\WriterPanel\EditHeading.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Inbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\WriterLeftMenuPartial.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Sendbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetInboxMessageDetail.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetSendboxMessageDetail.cshtml" />
+    <Content Include="Views\WriterPanelMessage\NewMessage.cshtml" />
+    <Content Include="Views\WriterPanelMessage\TrashList.cshtml" />
+    <Content Include="Views\WriterPanelMessage\TrashDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetListDraft.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetMessageDetail.cshtml" />
+    <Content Include="Views\WriterPanelContent\WriterContent.cshtml" />
+    <Content Include="Themes\login-form-20\.DS_Store" />
+    <Content Include="Themes\login-form-20\css\.DS_Store" />
+    <Content Include="Themes\login-form-20\css\bootstrap\.DS_Store" />
+    <Content Include="Themes\login-form-20\css\bootstrap\mixins\.DS_Store" />
+    <Content Include="Themes\login-form-20\fonts\.DS_Store" />
+    <Content Include="Themes\login-form-20\images\.DS_Store" />
+    <Content Include="Themes\login-form-20\js\.DS_Store" />
+    <Content Include="Themes\login-form-20\scss\.DS_Store" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\.DS_Store" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_alert.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_badge.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_button-group.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_buttons.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_card.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_carousel.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_close.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_code.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_forms.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_functions.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_grid.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_images.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_input-group.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_list-group.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_media.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_mixins.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_modal.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_nav.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_navbar.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_pagination.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_popover.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_print.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_progress.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_reboot.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_root.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_spinners.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_tables.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_toasts.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_transitions.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_type.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_utilities.scss" />
+    <Content Include="Themes\login-form-20\scss\bootstrap\_variables.scss" />
+    <Content Include="Themes\login-form-20\scss\style.scss" />
+    <Content Include="Views\Register\WriterRegister.cshtml" />
+    <Content Include="Views\Login\WriterLogin.cshtml" />
+    <Content Include="Views\Default\Headings.cshtml" />
+    <Content Include="Views\Default\PartialContent.cshtml" />
+    <Content Include="Views\WriterPanel\AllHeading.cshtml" />
+    <Content Include="Views\WriterPanelContent\AddContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

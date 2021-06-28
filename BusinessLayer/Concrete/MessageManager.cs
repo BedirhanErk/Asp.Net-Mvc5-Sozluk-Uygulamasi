@@ -21,29 +21,29 @@ namespace BusinessLayer.Concrete
             return _messageDal.Get(x => x.MessageId == id);
         }
 
-        public List<Message> GetListDraft()
+        public List<Message> GetListDraft(string p)
         {
-            return _messageDal.List(x => x.Draft == true && x.SenderMail == "admin@gmail.com" && x.Status == false);
+            return _messageDal.List(x => x.Draft == true && x.SenderMail == p && x.SenderStatus == false).OrderByDescending(y=>y.MessageDate).ToList();
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string p)
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com" && x.Status == false).OrderBy(x => x.MessageDate).ToList();
+            return _messageDal.List(x => x.ReceiverMail == p && x.ReceiverStatus == false && x.Draft == false).OrderBy(x => x.MessageDate).OrderByDescending(y=>y.MessageDate).ToList();
         }
 
-        public List<Message> GetListSendbox()
+        public List<Message> GetListSendbox(string p)
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com" && x.Draft == false && x.Status == false);
+            return _messageDal.List(x => x.SenderMail == p && x.Draft == false && x.SenderStatus == true && x.ReceiverDelete == false).OrderByDescending(y=>y.MessageDate).ToList();
         }
 
-        public List<Message> GetListTrash()
+        public List<Message> GetListTrash(string p)
         {
-            return _messageDal.List(x => x.Status == true);
+            return _messageDal.List(x => x.ReceiverStatus == true && x.ReceiverMail == p && x.ReceiverDelete == false).OrderByDescending(y=>y.MessageDate).ToList();
         }
 
-        public List<Message> GetUnReadMessageForInbox()
+        public List<Message> GetUnReadMessageForInbox(string p)
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com" && x.Status == false && x.Read == false);
+            return _messageDal.List(x => x.ReceiverMail == p && x.ReceiverStatus == false && x.Read == false && x.Draft == false);
         }
 
         public void MessageAdd(Message message)
@@ -58,7 +58,7 @@ namespace BusinessLayer.Concrete
 
         public void MessageFullyDelete(Message message)
         {
-            _messageDal.Delete(message);
+            _messageDal.Update(message);
         }
 
         public void MessageUpdate(Message message)
