@@ -1,48 +1,34 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    Layout = null;
 }
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <title>Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="keywords" content="Recognize Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script>
-        addEventListener("load", function() {
+        addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
-
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
-
     </script>
-    <!-- //Meta tag Keywords -->
-    <!-- Custom-Files -->
     <link rel="stylesheet" href="~/Themes/Showcase/css/bootstrap.css">
-    <!-- Bootstrap-Core-CSS -->
     <link href="~/Themes/Showcase/css/simpleLightbox.css" rel='stylesheet' type='text/css' />
     <link href="~/Themes/Showcase/css/roadmap.css" rel="stylesheet" type="text/css" />
-    <!-- Banner-Slider-CSS -->
     <link rel="stylesheet" href="~/Themes/Showcase/css/snow.css">
     <link rel="stylesheet" href="~/Themes/Showcase/css/aos.css">
     <link href='~/Themes/Showcase/css/aos-animation.css' rel='stylesheet prefetch' type="text/css" media="all" />
     <link rel="stylesheet" href="~/Themes/Showcase/css/style.css" type="text/css" media="all" />
-    <!-- Style-CSS -->
     <link rel="stylesheet" href="~/Themes/Showcase/css/fontawesome-all.css">
-    <!-- Font-Awesome-Icons-CSS -->
-    <!-- /Fonts -->
     <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,400,400i,500,500i,700,700i,900" rel="stylesheet">
-    <!-- //Fonts -->
-
 </head>
-
 <body>
-    <!-- mian-content -->
     <header class="index-banner" id="home">
-        <!-- nav -->
         <nav class="main-header d-flex">
             <div id="brand">
                 <div id="logo">
@@ -52,7 +38,7 @@
                 </div>
                 <div id="word-mark">
                     <h1>
-                        <a href="index.html">Recognize</a>
+                        <a href="#home">Adsız.Sözlük</a>
                     </h1>
                 </div>
             </div>
@@ -66,31 +52,30 @@
                 </div>
                 <ul class="text-center nav-honey">
                     <li>
-                        <a href="index.html" class="active ">Home</a>
+                        <a href="#home" class="scroll">Ana Sayfa</a>
                     </li>
                     <li>
-                        <a class="scroll" href="#about">About</a>
+                        <a class="scroll" href="#about">Programlar</a>
                     </li>
                     <li>
-                        <a class="scroll" href="#services">Services</a>
+                        <a class="scroll" href="#services">Hakkında</a>
                     </li>
                     <li>
-                        <a class="scroll" href="#projects">Projects</a>
+                        <a class="scroll" href="#projects">Görseller</a>
                     </li>
                     <li>
-                        <a class="scroll" href="#contact">Contact</a>
+                        <a class="scroll" href="#contact">İletişim</a>
+                    </li>
+                    <li>
+                        <a class="" href="/Default/Headings/1">Sözlük</a>
                     </li>
                     <li class="login">
-                        <button type="button" class="btn login-btn text-uppercase " data-toggle="modal" data-target="#exampleModalCenter">
-                            Login
-                        </button>
+                        <a class="btn login-btn text-uppercase btn-primary" href="/Login/WriterLogin">Gİrİş Yap</a>
                     </li>
                 </ul>
             </div>
             <div class="clearfix"></div>
         </nav>
-        <!-- //nav -->
-        <!-- banner -->
         <div class="banner_section">
             <div class="snow-container">
                 <div class="snow foreground"></div>
@@ -101,99 +86,84 @@
                 <div class="snow background layered"></div>
             </div>
             <div class="banner-info text-uppercase">
-                <h6 data-aos="fade-right">Introduction</h6>
-                <h5 data-aos="fade-right">Hello, my name is Daniel</h5>
-                <h3 data-text="I'm a Programmer">I'm a Programmer</h3>
+                <h6 data-aos="fade-right">Bedirhan Erkılıç</h6>
+                <h5 data-aos="fade-right">Merhaba, Sözlüğe Hoş Geldiniz</h5>
+                <h3 data-text="Adsız Sözlük">Adsız Sözlük</h3>
                 <div class="ban-buttons mt-3" data-aos="fade-right">
-                    <a class="btn work scroll" href="#projects">My Work</a>
-                    <a class="btn work scroll active" href="#contact">Here me</a>
+                    <a class="btn work scroll" href="#projects">Görseller</a>
+                    <a class="btn work scroll active" href="#contact">İletişim</a>
                 </div>
-
             </div>
         </div>
-        <!-- //banner -->
     </header>
-    <!-- //header -->
-    <!--// banner-slider -->
-    <!-- banner-bottom-wthree -->
     <section class="banner-bottom-wthree py-lg-5 py-md-5 py-4" id="about">
         <div class="container">
             <div class="inner-sec-w3ls py-lg-5 py-4">
                 <div class="info-about text-center">
-                    <h4 class="sub-tittle-w3">About Me</h4>
-                    <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3">Welcome to My website</h3>
+                    <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3">Kullandığım Geliştirme Bileşenleri</h3>
                     <div class="row mt-lg-5 mt-3">
                         <div class="col-lg-4 progress-info-content text-left">
                             <div class="progress-one my-lg-5" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">Web Design</h4>
+                                <h4 class="progress-tittle-w3">C#</h4>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                             <div class="progress-one" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">Branding</h4>
+                                <h4 class="progress-tittle-w3">Entity Framework</h4>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 progress-info-content text-left">
-                            <div class="progress-one my-lg-5" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">PHP Development</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="progress-one" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">Marketing</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 progress-info-content text-left">
                             <div class="progress-one my-lg-5" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">Photography</h4>
+                                <h4 class="progress-tittle-w3">Asp.Net Mvc</h4>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress-one" data-aos="fade-up">
+                                <h4 class="progress-tittle-w3">SOLID</h4>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 progress-info-content text-left">
+                            <div class="progress-one my-lg-5" data-aos="fade-up">
+                                <h4 class="progress-tittle-w3">Kurumsal Mimari</h4>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                             <div class="progress-one" data-aos="fade-up">
                                 <h4 class="progress-tittle-w3">
-                                    SEO
+                                    Sql
                                 </h4>
                                 <div class="progress">
-
                                     <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--// ab -->
-    <!-- /services -->
     <section class="services py-md-5 py-4" id="services">
         <div class="container">
             <div class="inner-sec-w3ls py-md-5 py-4">
-                <h4 class="sub-tittle-w3 text-uppercase text-center">My Services</h4>
-                <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center text-white">What i do</h3>
+                <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center text-white">Bu Projede Neler Yaptım?</h3>
                 <div class="price-right">
                     <div class="tabs">
                         <ul class="nav nav-pills my-md-5 my-3 justify-content-center" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Service 1</a>
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Yaptıklarım 1</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Service 2</a>
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Yaptıklarım 2</a>
                             </li>
-
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -203,31 +173,28 @@
                                             <div class="card">
                                                 <div class="card-body">
                                                     <i class="fas fa-list-ul mb-4"></i>
-                                                    <h5 class="card-title text-uppercase">Professional Code</h5>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                                                    <h5 class="card-title text-uppercase">Sql Veri Tabanı</h5>
+                                                    <p class="card-text">Projemde veri tabanı olarak MsSql kullandım. Sunucuya taşırken hosting desteği olan bir sunucu üzerinde çalıştım. </p>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="col-lg-4 service-in text-center" data-aos="flip-up">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <i class="far fa-lightbulb mb-4"></i>
-                                                    <h5 class="card-title text-uppercase">Creative Ideas</h5>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                                                    <h5 class="card-title text-uppercase">Tasarım Araçları</h5>
+                                                    <p class="card-text">Projenin frontend tarafında HTML5, CSS, Bootstrap, Javascript, Jquery bileşenlerine yer vererek tasarım tarafını gerçekleştirdim.</p>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="col-lg-4 service-in text-center" data-aos="flip-up">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <i class="far fa-clone mb-4"></i>
-                                                    <h5 class="card-title text-uppercase">SEO & Marketing</h5>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                                                    <h5 class="card-title text-uppercase">Proje Kampı</h5>
+                                                    <p class="card-text">100 Derslik Mvc Proje Kampı kapsamında her hafta düzenli olarak kendi yorumlarımı da katarak geliştirme yaptım.</p>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -239,8 +206,8 @@
                                             <div class="card">
                                                 <div class="card-body">
                                                     <i class="far fa-heart mb-4"></i>
-                                                    <h5 class="card-title">User Friendly</h5>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                                                    <h5 class="card-title">Asp.Net Mvc5</h5>
+                                                    <p class="card-text">Bu projeyi sektörün güncel geliştirme başlıklarından olan .Net Mvc5 ile geliştirdim.</p>
                                                 </div>
                                             </div>
 
@@ -249,23 +216,20 @@
                                             <div class="card">
                                                 <div class="card-body">
                                                     <i class="fas fa-magic mb-4"></i>
-                                                    <h5 class="card-title">Web Development</h5>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                                                    <h5 class="card-title">N Katmanlı Mimari</h5>
+                                                    <p class="card-text">Projemi Business, Entity, DataAcess ve Presentation olmak üzere 4 temel katmanda değiştirdim.</p>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                         <div class="col-lg-4 service-in text-center">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <i class="fas fa-sliders-h mb-4"></i>
-                                                    <h5 class="card-title">Portfolio Options</h5>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                                                    <h5 class="card-title">SOLID</h5>
+                                                    <p class="card-text">SOLID presiplerini olabildiğince ezmeden ilerleyip doğru formatta kod yazmaya çalıştım.</p>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -275,54 +239,37 @@
             </div>
         </div>
     </section>
-    <!-- //services -->
-    <!-- /experience -->
-    <section class="experience py-lg-5 py-4" id="experience">
-        <div class="timeline py-lg-5 py-3">
-            <h4 class="sub-tittle-w3 text-uppercase text-center">Experience</h4>
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Job & Education</h3>
-            <div id="my-timeline"></div>
-        </div>
-
-    </section>
-    <!-- //experience -->
-    <!--gallery  -->
     <section class="gallery py-md-5 py-3" id="projects">
         <div class="gallery-inner container py-md-5 pb-3">
-            <h4 class="sub-tittle-w3 text-uppercase text-center">View all</h4>
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">My Projects</h3>
+            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Proje Görselleri</h3>
             <div class="row">
-
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g1.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/1.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g1.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/1.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
+                                    <h3>Görsel 1</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g2.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/2.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g2.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/2.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
+                                    <h3>Görsel 2</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g3.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/3.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g3.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/3.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
+                                    <h3>Görsel 3</h3>
                                 </div>
                             </div>
                         </a>
@@ -330,33 +277,31 @@
                 </div>
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g4.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/4.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g4.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/4.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
+                                    <h3>Görsel 4</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g5.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/5.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g5.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/5.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
+                                    <h3>Görsel 5</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g6.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/6.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g6.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/6.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
+                                    <h3>Görsel 6</h3>
                                 </div>
                             </div>
                         </a>
@@ -364,126 +309,93 @@
                 </div>
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g7.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/7.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g7.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/7.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
+                                    <h3>Görsel 7</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g8.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/8.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g8.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/8.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
+                                    <h3>Görsel 8</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g9.jpg">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Themes/Showcase/images/9.PNG">
                             <div class="section_1_gallery_grid1">
-                                <img src="images/g9.jpg" alt=" " class="img-fluid" />
+                                <img src="~/Themes/Showcase/images/9.PNG" alt=" " class="img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
+                                    <h3>Görsel 9</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-
-                <!--end portfolio-area -->
             </div>
-            <!-- //gallery container -->
         </div>
     </section>
-    <!-- //gallery -->
-    <!--/stats-->
     <section class="stats py-lg-5 py-4" id="stats">
         <div class="gallery-inner container py-md-5 py-4">
             <div class="row mt-lg-5 stats-con text-white">
                 <div class="col-sm-3 col-6 stats_info counter_grid">
-
                     <i class="far fa-lightbulb"></i>
-                    <p class="counter">645</p>
-                    <h4>Projects Done</h4>
-
+                    <p class="counter">158</p>
+                    <h4>Başlık Sayısı</h4>
                 </div>
                 <div class="col-sm-3 col-6 stats_info counter_grid1">
-
                     <i class="far fa-heart"></i>
-                    <p class="counter">563</p>
-                    <h4>Satisfied Clients</h4>
-
+                    <p class="counter">1485</p>
+                    <h4>Entry Sayısı</h4>
                 </div>
                 <div class="col-sm-3 col-6 stats_info counter_grid">
-
                     <i class="fas fa-magic"></i>
-                    <p class="counter">1145</p>
-                    <h4>Awards</h4>
-
+                    <p class="counter">146</p>
+                    <h4>Yazar Sayısı</h4>
                 </div>
                 <div class="col-sm-3 col-6 stats_info counter_grid2">
-
                     <i class="far fa-smile"></i>
-                    <p class="counter">1045</p>
-                    <h4>Happy Clients</h4>
-
+                    <p class="counter">365</p>
+                    <h4>Mesaj Sayısı</h4>
                 </div>
             </div>
         </div>
     </section>
-    <!--//stats-->
-    <!-- /testimonials -->
     <div class="testimonials py-lg-5 py-4" id="clients">
         <div class="testimonials-inner container py-lg-4 py-3">
-            <h4 class="sub-tittle-w3 text-uppercase text-center">Testimonials</h4>
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">What They Says</h3>
+            <h4 class="sub-tittle-w3 text-uppercase text-center">Kısa Notlar</h4>
+            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Projeye Dair</h3>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <div class="testimonials_grid center">
                             <div class="testimonials_grid-inn text-uppercase">
                                 <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor sit amet,Maecenas interdum magna quam egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+                                <p>Projeyi geliştirirken .Net Mvc5 ile SOLID presiplerine uygun bir şekilde N tier arc. olarak adlandıran n katmanlı mimari yapısını ezmeden ilerlemeye çalıştım. Projeyi yaklaşık 3 ayda tamamladım.</p>
                             </div>
-                            <h3>Gretchen </h3>
-
-                            <label>United States</label>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="testimonials_grid text-center">
                             <div class="testimonials_grid-inn text-uppercase">
                                 <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor sit amet,Maecenas interdum magna quam egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
+                                <p>Ben geliştirirken çok keyif aldım umarım sizler de projeyi beğenirsiniz. Yorumlarınınz benim için çok önemli. Lütfen yorumlarınızı iletişim kısmından bana iletiniz.</p>
                             </div>
-                            <h3>
-                                Anne Marc
-
-                            </h3>
-                            <label>United States</label>
-
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="testimonials_grid">
                             <div class="testimonials_grid-inn text-uppercase">
                                 <i class="fas fa-quote-left"></i>
-                                <p>Maecenas interdum, metus vitae tincidunt porttitor, magna quam egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
-
+                                <p>Bu proje uzun süredir aklımda olan mvc dünyasına kurumsal mimari ile giriş yaptğım 100 dersin sonunda ortaya çıkan güzel bir ürün oldu.</p>
                             </div>
-                            <h3>
-                                Harry Baker
-
-                            </h3>
-                            <label>United States</label>
-
                         </div>
                     </div>
                     <a class="carousel-control-prev test" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -499,58 +411,48 @@
             </div>
         </div>
     </div>
-    <!-- //testimonials -->
-    <!-- /Contact-->
     <section class="contact py-lg-5 py-md-5 py-3" id="contact">
         <div class="container">
             <div class="inner-sec-w3ls py-lg-5 py-3">
-                <h4 class="sub-tittle-w3 text-uppercase text-center">Find Me</h4>
-                <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center text-white">Contact Me Now</h3>
-
+                <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center text-white">İletİşİm</h3>
                 <div class="contact_grid_right">
                     <form action="#" method="post">
                         <div class="row contact_left_grid">
                             <div class="col-md-6 con-left" data-aos="fade-up">
                                 <div class="form-group">
-
-                                    <input class="form-control" type="text" name="Name" placeholder="" required="">
+                                    <input class="form-control" type="text" name="Name" placeholder="Adınız" required="">
                                 </div>
                                 <div class="form-group">
-
-                                    <input class="form-control" type="email" name="Email" placeholder="" required="">
+                                    <input class="form-control" type="email" name="Email" placeholder="Mail" required="">
                                 </div>
                                 <div class="form-group">
-
-                                    <input class="form-control" type="text" name="Subject" placeholder="" required="">
+                                    <input class="form-control" type="text" name="Subject" placeholder="Konu" required="">
                                 </div>
                             </div>
                             <div class="col-md-6 con-right" data-aos="fade-up">
                                 <div class="form-group">
-                                    <textarea id="textarea" placeholder="" required=""></textarea>
+                                    <textarea id="textarea" placeholder="Mesajınız..." required=""></textarea>
                                 </div>
                             </div>
                             <div class="sub-honey mx-auto mt-3">
-                                <input class="form-control" type="submit" value="Submit">
+                                <input class="form-control" type="submit" value="Gönder">
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="address row mt-lg-5">
-
                     <div class="col-md-4 address-grid" data-aos="flip-up">
                         <div class="address-info">
                             <div class="address-left text-center">
                                 <i class="far fa-map"></i>
                             </div>
                             <div class="address-right text-center">
-                                <h6 class="my-3">Address</h6>
+                                <h6 class="my-3">Adres</h6>
                                 <p>
-                                    California, USA
-
+                                    Yozgat, TR
                                 </p>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-md-4 address-grid" data-aos="flip-up">
                         <div class="address-info">
@@ -561,11 +463,9 @@
                                 <h6 class="my-3">Email</h6>
                                 <p>
                                     Email :
-                                    <a href="mailto:example@email.com"> mail@example.com</a>
-
+                                    <a href="mailto:erkilicbedirhan@gmail.com"> erkilicbedirhan@gmail.com</a>
                                 </p>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-md-4 address-grid" data-aos="flip-up">
@@ -574,48 +474,43 @@
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
                             <div class="address-right text-center">
-                                <h6 class="my-3">Phone</h6>
-                                <p>+1 234 567 8901</p>
-
+                                <h6 class="my-3">Telefon</h6>
+                                <p>539 899 5545</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- //Contact -->
-    <!--/footer-->
     <footer class="footer text-left">
         <div class="container py-4 py-sm-5">
-
             <div class="row py-sm-4 py-3">
                 <div class="col-lg-2 col-md-4">
                     <ul class="list-footer" data-aos="fade-up">
                         <li>
                             <a href="#home" class="nav-link scroll">
-                                Home
+                                Ana Sayfa
                             </a>
                         </li>
                         <li class="my-2">
                             <a href="#about" class="nav-link scroll">
-                                About
+                                Programlar 
                             </a>
                         </li>
                         <li class="my-2">
                             <a href="#services" class="nav-link scroll">
-                                Services
+                                Hakkında 
                             </a>
                         </li>
                         <li class="mb-2">
                             <a href="#projects" class="nav-link scroll">
-                                Projects
+                                Görseller
                             </a>
                         </li>
                         <li>
                             <a href="#contact" class="nav-link scroll">
-                                Contact Us
+                                İletişim
                             </a>
                         </li>
                     </ul>
@@ -623,18 +518,13 @@
                 <div class="col-lg-2 col-md-4 col-sm-6 mt-sm-5">
                     <ul class="list-footer" data-aos="fade-up">
                         <li>
-                            <a href="#register" data-toggle="modal" data-target="#exampleModalCenter" class="nav-link scroll">
-                                Login
+                            <a href="/Login/WriterLogin" data-toggle="modal" data-target="#exampleModalCenter" class="nav-link scroll">
+                                Giriş Yap
                             </a>
                         </li>
                         <li class="my-2">
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter2" class="nav-link">
-                                Register
-                            </a>
-                        </li>
-                        <li class="my-2">
-                            <a href="#" class="nav-link">
-                                License
+                            <a href="/Register/WriterRegister" data-toggle="modal" data-target="#exampleModalCenter2" class="nav-link">
+                                Kayıt Ol
                             </a>
                         </li>
                     </ul>
@@ -642,8 +532,8 @@
                 <div class="offset-lg-4"></div>
                 <div class="col-lg-4 footer-end-grid mt-md-0 mt-sm-5" data-aos="fade-up">
                     <h2>
-                        <a href="index.html">
-                            <i class="fas fa-crosshairs"></i> Recognize
+                        <a href="#home">
+                            <i class="fas fa-crosshairs"></i> Adsız.Sözlük
                         </a>
                     </h2>
                 </div>
@@ -652,30 +542,29 @@
             <div class="d-flex justify-content-between pt-lg-3  footer-bottom-cpy">
                 <div class="copy-right-w3ls">
                     <p>
-                        © 2018 Recognize. All rights reserved | Design by
-                        <a href="http://w3layouts.com/"> W3layouts </a>
-
+                        © 2021 Adsız.Sözlük. Tüm Hakları Saklıdır. | Developing by
+                        <a href="https://www.bedirhanerkilic.com/"> Bedirhan Erkılıç </a>
                     </p>
                 </div>
                 <div class="social-content pb-md-0 pb-4">
                     <ul class="social-icons text-center d-flex">
                         <li class="ml-lg-5">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100051665255398">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://www.instagram.com/erkilicbedirhan/?hl=tr">
+                                <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fab fa-google-plus-g"></i>
+                            <a href="https://github.com/BedirhanErk">
+                                <i class="fab fa-github"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.linkedin.com/in/bedirhan-erkilic/">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </li>
@@ -684,9 +573,6 @@
             </div>
         </div>
     </footer>
-    <!--//footer-->
-    <!--model-forms-->
-    <!--/Login-->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -696,7 +582,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <div class="login px-4 mx-auto mw-100">
                         <h5 class="text-center mb-4">Login Now</h5>
                         <form action="#" method="post">
@@ -720,12 +605,9 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-    <!--//Login-->
-    <!--/Register-->
     <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -747,7 +629,6 @@
                                 <label>Last name</label>
                                 <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
                             </div>
-
                             <div class="form-group">
                                 <label class="mb-2">Password</label>
                                 <input type="password" class="form-control" id="password1" placeholder="" required="">
@@ -756,7 +637,6 @@
                                 <label>Confirm Password</label>
                                 <input type="password" class="form-control" id="password2" placeholder="" required="">
                             </div>
-
                             <button type="submit" class="btn btn-primary submit mb-4">Register</button>
                             <p class="text-center pb-4">
                                 <a href="#">By clicking Register, I agree to your terms</a>
@@ -769,45 +649,26 @@
             </div>
         </div>
     </div>
-    <!--//Register-->
-
     <script src="~/Themes/Showcase/js/jquery-2.2.3.min.js"></script>
-    <!-- banner-type-text -->
-    <script src='js/aos.js'></script>
+    <script src='~/Themes/Showcase/js/aos.js'></script>
     <script>
         AOS.init({
             easing: 'ease-out-back',
             duration: 1000
         });
-
     </script>
-    <!-- sticky nav bar-->
     <script>
         $(() => {
-
-            //On Scroll Functionality
             $(window).scroll(() => {
                 var windowTop = $(window).scrollTop();
                 windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
                 windowTop > 100 ? $('ul.nav-honey').css('top', '50px') : $('ul.nav-honey').css('top', '160px');
             });
-
-            //Click Logo To Scroll To Top
             $('#logo').on('click', () => {
                 $('html,body').animate({
                     scrollTop: 0
                 }, 500);
             });
-
-            //            //Smooth Scrolling Using Navigation Menu
-            //            $('a[href*="#"]').on('click', function(e) {
-            //                $('html,body').animate({
-            //                    scrollTop: $($(this).attr('href')).offset().top - 100
-            //                }, 500);
-            //                e.preventDefault();
-            //            });
-
-            //Toggle Menu
             $('#menu-toggle').on('click', () => {
                 $('#menu-toggle').toggleClass('closeMenu');
                 $('ul').toggleClass('showMenu');
@@ -817,67 +678,63 @@
                     $('#menu-toggle').removeClass('closeMenu');
                 });
             });
-
         });
 
     </script>
-    <!-- //sticky nav bar -->
-    <!-- Include jQuery Timeline Plugin -->
     <script src="~/Themes/Showcase/js/jquery.roadmap.js"></script>
-
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             var events = [{
-                    date: 'Oct 2018 - Present',
-                    content: 'Company Name <small>Co-founder, Front-end Designer</small>'
-                },
-                {
-                    date: '2016 - 2018',
-                    content: 'Company Name <small>Senior Visual Designer</small>'
-                },
-                {
-                    date: '2013 - 2016',
-                    content: 'Company Name <small>Mid-level Designer</small>'
-                },
-                {
-                    date: '2012 - 2013',
-                    content: 'Company Name <small>Mid-level Designer</small>'
-                },
-                {
-                    date: '2012 - 2013',
-                    content: 'Company Name <small>Freelance</small>'
-                },
-                {
-                    date: '2011 - 2012',
-                    content: 'San Diego university  <small>For Design</small>'
-                },
-                {
-                    date: '2010 - 2011',
-                    content: 'New York university  <small>For Graphic Design</small>'
-                },
+                date: 'Oct 2018 - Present',
+                content: 'Company Name <small>Co-founder, Front-end Designer</small>'
+            },
+            {
+                date: '2016 - 2018',
+                content: 'Company Name <small>Senior Visual Designer</small>'
+            },
+            {
+                date: '2013 - 2016',
+                content: 'Company Name <small>Mid-level Designer</small>'
+            },
+            {
+                date: '2012 - 2013',
+                content: 'Company Name <small>Mid-level Designer</small>'
+            },
+            {
+                date: '2012 - 2013',
+                content: 'Company Name <small>Freelance</small>'
+            },
+            {
+                date: '2011 - 2012',
+                content: 'San Diego university  <small>For Design</small>'
+            },
+            {
+                date: '2010 - 2011',
+                content: 'New York university  <small>For Graphic Design</small>'
+            },
 
-                {
-                    date: '2009 - 2010',
-                    content: 'New York university  <small>For Graphic Design</small>'
-                },
+            {
+                date: '2009 - 2010',
+                content: 'New York university  <small>For Graphic Design</small>'
+            },
 
-                {
-                    date: '2008 - 2009',
-                    content: 'New York university  <small>For Graphic Design</small>'
-                },
-                {
-                    date: '2005 - 2008',
-                    content: 'Lorem Ipsum  <small>Add Description</small>'
-                },
-                {
-                    date: '2003 - 2005',
-                    content: 'Lorem IPsum  <small>Add Description</small>'
-                },
-                {
-                    date: '2001 - 2003',
-                    content: 'Lorem IPsum  <small>Add Description</small>'
-                }
+            {
+                date: '2008 - 2009',
+                content: 'New York university  <small>For Graphic Design</small>'
+            },
+            {
+                date: '2005 - 2008',
+                content: 'Lorem Ipsum  <small>Add Description</small>'
+            },
+            {
+                date: '2003 - 2005',
+                content: 'Lorem IPsum  <small>Add Description</small>'
+            },
+            {
+                date: '2001 - 2003',
+                content: 'Lorem IPsum  <small>Add Description</small>'
+            }
             ];
 
             $('#my-timeline').roadmap(events, {
@@ -889,58 +746,37 @@
         });
 
     </script>
-    <!-- simpleLightbox -->
     <script src="~/Themes/Showcase/js/simpleLightbox.js"></script>
     <script>
         $('.proj_gallery_grid a').simpleLightbox();
 
     </script>
-    <!-- //simpleLightbox -->
-    <!-- stats -->
     <script src="~/Themes/Showcase/js/jquery.waypoints.min.js"></script>
     <script src="~/Themes/Showcase/js/jquery.countup.js"></script>
     <script>
         $('.counter').countUp();
 
     </script>
-    <!-- //stats -->
-    <!--/ start-smoth-scrolling -->
-    <script src="~/Themes/Showcase/js/move-top.js"></script>
-    <script src="~/Themes/Showcase/js/easing.js"></script>
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
     <script>
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event) {
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
                 event.preventDefault();
                 $('html,body').animate({
                     scrollTop: $(this.hash).offset().top
                 }, 900);
             });
         });
-
     </script>
     <script>
-        $(document).ready(function() {
-            /*
-            						var defaults = {
-            							  containerID: 'toTop', // fading element id
-            							containerHoverID: 'toTopHover', // fading element hover id
-            							scrollSpeed: 1200,
-            							easingType: 'linear'
-            						 };
-            						*/
-
+        $(document).ready(function () {
             $().UItoTop({
                 easingType: 'easeOutQuart'
             });
 
         });
-
     </script>
-    <!--// end-smoth-scrolling -->
-    <!-- //js -->
-
     <script src="~/Themes/Showcase/js/bootstrap.js"></script>
-
 </body>
-
 </html>
