@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Dtos.AdminDto
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Yeni Admin Ekle</h1>
+<br />
+@using (Html.BeginForm("AddAdmin", "Authorization", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Admin Adı")
+        @Html.TextBoxFor(x => x.AdminName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AdminName, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Admin Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.AdminUserName, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Admin Şifresi")
+        @Html.TextBoxFor(x => x.AdminPassword, new { @class = "form-control", @type = "password" })
+        @Html.ValidationMessageFor(x => x.AdminPassword, "", new { @style = "color:red" })
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+        <a href="/Authorization/Index" class="btn btn-warning">Geri Dön</a>
+    </div>
+}

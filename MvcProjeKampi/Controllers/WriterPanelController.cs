@@ -56,7 +56,7 @@ namespace MvcProjeKampi.Controllers
         {
             IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()), new WriterManager(new EfWriterDal()));
             ValidationResult results = writervalidator.Validate(writerProfileEditDto);
-            if (results.IsValid )
+            if (results.IsValid)
             {
                 if (writerProfileEditDto.WriterImage != null)
                 {

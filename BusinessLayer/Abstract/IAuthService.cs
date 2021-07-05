@@ -15,5 +15,7 @@ namespace BusinessLayer.Abstract
         bool WriterLogin(WriterLoginDto writerLoginDto);
         void WriterEdit(WriterProfileEditDto writerProfileEditDto);
         void WriterAdd(WriterProfileEditDto writerProfileEditDto);
+        void AdminEdit(AdminDto adminDto);
+        void AdminAdd(AdminDto adminDto);
     }
 }

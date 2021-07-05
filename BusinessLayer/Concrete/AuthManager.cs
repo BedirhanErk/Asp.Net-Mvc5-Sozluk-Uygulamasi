@@ -19,6 +19,39 @@ namespace BusinessLayer.Concrete
             _adminService = adminService;
             _writerService = writerService;
         }
+
+        public void AdminAdd(AdminDto adminDto)
+        {
+            byte[] userNameHash, passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(adminDto.AdminUserName, adminDto.AdminPassword, out userNameHash, out passwordHash, out passwordSalt);
+            var admin = new Admin
+            {
+                AdminName = adminDto.AdminName,
+                AdminStatus = true,
+                AdminRole = "A",
+                AdminUserName = userNameHash,
+                AdminPasswordHash = passwordHash,
+                AdminPasswordSalt = passwordSalt,
+            };
+            _adminService.AdminAdd(admin);
+        }
+
+        public void AdminEdit(AdminDto adminDto)
+        {
+            byte[] userNameHash, passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(adminDto.AdminUserName, adminDto.AdminPassword, out userNameHash, out passwordHash, out passwordSalt);
+            var admin = new Admin
+            {
+                AdminName = adminDto.AdminName,
+                AdminStatus = adminDto.AdminStatus,
+                AdminRole = adminDto.AdminRole,
+                AdminUserName = userNameHash,
+                AdminPasswordHash = passwordHash,
+                AdminPasswordSalt = passwordSalt,
+            };
+            _adminService.AdminUpdate(admin);
+        }
+
         public bool Login(LoginDto loginDto)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
@@ -27,10 +60,13 @@ namespace BusinessLayer.Concrete
                 var user = _adminService.GetList();
                 foreach (var item in user)
                 {
-                    if (HashingHelper.VerifyAdminHash(loginDto.AdminUserName, loginDto.AdminPassword, item.AdminUserName, item.AdminPasswordHash, item.AdminPasswordSalt))
+                    if (item.AdminStatus == true)
                     {
-                        return true;
-                    }
+                        if (HashingHelper.VerifyAdminHash(loginDto.AdminUserName, loginDto.AdminPassword, item.AdminUserName, item.AdminPasswordHash, item.AdminPasswordSalt))
+                        {
+                            return true;
+                        }
+                    }       
                 }
                 return false;
             }

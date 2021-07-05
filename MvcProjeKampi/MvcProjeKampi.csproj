@@ -143,7 +143,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -164,6 +166,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoriesHeadingsCount.cs" />
+    <Compile Include="Models\CategoryClass.cs" />
+    <Compile Include="Models\HeadingsContentCount.cs" />
+    <Compile Include="Models\WritersHeadingsCount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
@@ -181,6 +187,7 @@
     <Content Include="Themes\Images\Adana 2.jpg" />
     <Content Include="Themes\Images\Adana.jpg" />
     <Content Include="Themes\Images\Adana3.jpg" />
+    <Content Include="Themes\Images\admin.jpg" />
     <Content Include="Themes\Images\Adıyaman.jpg" />
     <Content Include="Themes\Images\Afyon.jpg" />
     <Content Include="Themes\Images\Aksaray 2.jpg" />
@@ -2706,11 +2713,19 @@
     <Content Include="Themes\Showcase\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Content\GetAllContent.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Heading\HeadingReport.cshtml" />
+    <Content Include="Views\Test\SweetAlert.cshtml" />
+    <Content Include="Views\Authorization\Index.cshtml" />
+    <Content Include="Views\Chart\PieChart.cshtml" />
+    <Content Include="Views\Chart\LineChart.cshtml" />
+    <Content Include="Views\Chart\ColumnChart.cshtml" />
+    <Content Include="Views\Authorization\AddAdmin.cshtml" />
+    <Content Include="Views\Authorization\UpdateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Image\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

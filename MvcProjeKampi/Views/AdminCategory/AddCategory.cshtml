@@ -3,21 +3,28 @@
     ViewBag.Title = "AddCategory";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />  
+<br />
 <h1>Yeni Kategori Ekle</h1>
 <br />
 @using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
 {
     <div class="form-group">
         @Html.Label("Kategori Adı")
-        @Html.TextBoxFor(x => x.CategoryName, new { @class="form-control"})
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
         <br /><br />
         @Html.Label("Açıklama")
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryDescription, "", new { @style = "color:red" })
         <br /><br />
-        <button class="btn btn-primary">Ekle</button>
+        <button id="btn1" class="btn btn-primary">Ekle</button>
         <a href="/AdminCategory/Index" class="btn btn-warning">Geri Dön</a>
     </div>
 }
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $('#btn1').click(function () {
+        alert("Ekleme işlemi başarı ile gerçekleştirildi.");
+    });
+</script>

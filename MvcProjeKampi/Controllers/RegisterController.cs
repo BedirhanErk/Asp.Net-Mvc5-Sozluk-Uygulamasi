@@ -21,14 +21,14 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(LoginDto loginDto)
+        public ActionResult Index(AdminDto adminDto)
         {
             if (!this.IsCaptchaValid(errorText:""))
             {
                 ViewBag.ErrorMessage = "Doğrulama yanlış!";
-                return View("Index",loginDto);
+                return View("Index",adminDto);
             }
-            authService.Register(loginDto.AdminUserName, loginDto.AdminPassword);
+            authService.AdminAdd(adminDto);
             return RedirectToAction("Index","Login");
         }
         [HttpGet]
