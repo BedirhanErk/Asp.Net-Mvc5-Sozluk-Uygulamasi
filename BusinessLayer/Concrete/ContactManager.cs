@@ -42,7 +42,7 @@ namespace BusinessLayer.Concrete
 
         public List<Contact> GetList()
         {
-            return _contactDal.List().OrderBy(x => x.ContactDate).ToList();
+            return _contactDal.List().OrderByDescending(x => x.ContactDate).ToList();
         }
 
         public List<Contact> GetUnReadMessageForContact()

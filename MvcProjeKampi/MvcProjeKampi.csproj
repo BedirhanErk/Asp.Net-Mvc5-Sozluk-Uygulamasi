@@ -2723,6 +2723,10 @@
     <Content Include="Views\Chart\ColumnChart.cshtml" />
     <Content Include="Views\Authorization\AddAdmin.cshtml" />
     <Content Include="Views\Authorization\UpdateAdmin.cshtml" />
+    <Content Include="Views\Home\PartialGelistirme.cshtml" />
+    <Content Include="Views\Home\PartialYaptıklarım.cshtml" />
+    <Content Include="Views\Home\PartialGörseller.cshtml" />
+    <Content Include="Views\Home\PartialProjeyeDair.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
