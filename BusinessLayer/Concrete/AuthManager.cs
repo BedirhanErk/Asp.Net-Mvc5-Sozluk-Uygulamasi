@@ -28,7 +28,7 @@ namespace BusinessLayer.Concrete
             {
                 AdminName = adminDto.AdminName,
                 AdminStatus = true,
-                AdminRole = "A",
+                RoleId = adminDto.RoleId,
                 AdminUserName = userNameHash,
                 AdminPasswordHash = passwordHash,
                 AdminPasswordSalt = passwordSalt,
@@ -44,7 +44,7 @@ namespace BusinessLayer.Concrete
             {
                 AdminName = adminDto.AdminName,
                 AdminStatus = adminDto.AdminStatus,
-                AdminRole = adminDto.AdminRole,
+                RoleId = adminDto.RoleId,
                 AdminUserName = userNameHash,
                 AdminPasswordHash = passwordHash,
                 AdminPasswordSalt = passwordSalt,
@@ -72,7 +72,7 @@ namespace BusinessLayer.Concrete
             }
         }
 
-        public void Register(string adminMail, string password)
+        public void Register(string adminMail, string password,int adminRole,string adminName)
         {
             byte[] userNameHash, passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(adminMail, password, out userNameHash, out passwordHash, out passwordSalt);
@@ -81,7 +81,9 @@ namespace BusinessLayer.Concrete
                 AdminUserName = userNameHash,
                 AdminPasswordHash = passwordHash,
                 AdminPasswordSalt = passwordSalt,
-                AdminRole = "A"
+                RoleId = 1,
+                AdminStatus = true,
+                AdminName = adminName
             };
             _adminService.AdminAdd(admin);
         }

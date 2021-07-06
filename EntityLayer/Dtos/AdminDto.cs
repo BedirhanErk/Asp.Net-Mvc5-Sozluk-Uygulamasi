@@ -13,6 +13,6 @@ namespace EntityLayer.Dtos
         public bool AdminStatus { get; set; }
         public string AdminUserName { get; set; }
         public string AdminPassword { get; set; }
-        public string AdminRole { get; set; }
+        public int RoleId { get; set; }
     }
 }

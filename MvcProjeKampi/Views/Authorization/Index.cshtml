@@ -33,7 +33,7 @@
                     <p style="color:red">Pasif</p>
                 }
             </td>
-            <td>@item.AdminRole</td>
+            <td>@item.Role.RoleName = @item.Role.Description</td>
             <td>
                 <a style="margin-right:5px" href="/Authorization/UpdateAdmin/@item.AdminId" class="btn btn-secondary btn-sm"> <i class="fas fa-pencil-alt"></i> Güncelle</a>
                 @if (item.AdminStatus == true)

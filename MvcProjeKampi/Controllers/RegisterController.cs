@@ -28,7 +28,7 @@ namespace MvcProjeKampi.Controllers
                 ViewBag.ErrorMessage = "Doğrulama yanlış!";
                 return View("Index",adminDto);
             }
-            authService.AdminAdd(adminDto);
+            authService.Register(adminDto.AdminUserName,adminDto.AdminPassword,adminDto.RoleId,adminDto.AdminName);
             return RedirectToAction("Index","Login");
         }
         [HttpGet]

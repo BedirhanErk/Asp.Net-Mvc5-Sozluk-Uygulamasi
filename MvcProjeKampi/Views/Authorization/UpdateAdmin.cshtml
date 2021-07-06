@@ -18,7 +18,7 @@
         @Html.TextBoxFor(x => x.AdminName, new { @class = "form-control" })
         <br />
         @Html.Label("Admin Rolü")
-        @Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.valueAdminRole, new { @class = "form-control" })
         <br />
         <button class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> Güncelle</button>
         <a href="/Authorization/Index" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>

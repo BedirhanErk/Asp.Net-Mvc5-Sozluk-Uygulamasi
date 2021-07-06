@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\ISkillDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfRoleDal.cs" />
     <Compile Include="EntityFramework\EfSkillDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202105091614475_Mig1.cs" />
@@ -184,6 +186,10 @@
     <Compile Include="Migrations\202107051849325_Mig27_Admin_Change.designer.cs">
       <DependentUpon>202107051849325_Mig27_Admin_Change.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061801172_Mig28_admin_change.cs" />
+    <Compile Include="Migrations\202107061801172_Mig28_admin_change.designer.cs">
+      <DependentUpon>202107061801172_Mig28_admin_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -278,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107051849325_Mig27_Admin_Change.resx">
       <DependentUpon>202107051849325_Mig27_Admin_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061801172_Mig28_admin_change.resx">
+      <DependentUpon>202107061801172_Mig28_admin_change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,6 +21,9 @@
         @Html.TextBoxFor(x => x.AdminPassword, new { @class = "form-control", @type = "password" })
         @Html.ValidationMessageFor(x => x.AdminPassword, "", new { @style = "color:red" })
         <br />
+        @Html.Label("Rolü Seçiniz")
+        @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.valueAdminRole, new { @class = "form-control" })
+        <br />
         <button class="btn btn-primary"><i class="fas fa-plus"></i> Ekle</button>
         <a href="/Authorization/Index" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>
     </div>

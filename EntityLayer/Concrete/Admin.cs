@@ -16,7 +16,7 @@ namespace EntityLayer.Concrete
         public byte[] AdminUserName { get; set; }
         public byte[] AdminPasswordHash { get; set; }
         public byte[] AdminPasswordSalt { get; set; }
-        [StringLength(1)]
-        public string AdminRole { get; set; }
+        public int? RoleId { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

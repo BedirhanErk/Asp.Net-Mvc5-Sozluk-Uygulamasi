@@ -9,7 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IAuthService
     {
-        void Register(string adminMail, string password);
+        void Register(string adminMail, string password,int adminRole,string adminName);
         bool Login(LoginDto loginDto);
         void WriterRegister(string mail, string password);
         bool WriterLogin(WriterLoginDto writerLoginDto);
