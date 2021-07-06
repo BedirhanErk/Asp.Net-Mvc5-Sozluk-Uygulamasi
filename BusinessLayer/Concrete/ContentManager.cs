@@ -33,7 +33,7 @@ namespace BusinessLayer.Concrete
 
         public Content GetById(int id)
         {
-            throw new NotImplementedException();
+            return _contentDal.Get(x=>x.ContentId == id);
         }
 
         public List<Content> GetList(string p)
@@ -48,7 +48,6 @@ namespace BusinessLayer.Concrete
             }
             
         }
-
         public List<Content> GetListByHeadingId(int id)
         {
             return _contentDal.List(x => x.HeadingId == id);

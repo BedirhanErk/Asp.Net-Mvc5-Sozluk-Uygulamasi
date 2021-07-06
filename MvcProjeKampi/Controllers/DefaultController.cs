@@ -13,7 +13,7 @@ namespace MvcProjeKampi.Controllers
     {
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         ContentManager cm = new ContentManager(new EfContentDal());
-        public ActionResult Headings()
+        public ActionResult Headings(int id)
         {
             var values = hm.GetList();
             return View(values);
@@ -21,6 +21,8 @@ namespace MvcProjeKampi.Controllers
         public PartialViewResult PartialContent(int id = 0)
         {
             var values = cm.GetListByHeadingId(id);
+            var head = hm.GetById(id).HeadingName;
+            ViewBag.h = head;
             return PartialView(values);
         }
     }
