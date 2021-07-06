@@ -5,11 +5,15 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 @{ string color = "";}
-
+<br />
+<h3>
+    Başlıklarım
+    <a href="/WriterPanel/NewHeading" style="margin-left:25px;position:absolute;right:10px"><i class="fas fa-plus"></i> Ekle</a>
+</h3>
+<br />
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
-    <br />
     <section class="content">
         <div class="card">
             <div class="card-header">
@@ -27,9 +31,6 @@
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
-                            <th style="width: 1%">
-                                #
-                            </th>
                             <th style="width: 25%">
                                 Başlık Adı
                             </th>
@@ -66,9 +67,6 @@
                             }
                             <tr>
                                 <td>
-                                    @item.HeadingId
-                                </td>
-                                <td>
                                     <a>
                                         @item.HeadingName
                                     </a>
@@ -83,7 +81,7 @@
                                             <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
                                         </li>
                                     </ul>
-                                </td>                             
+                                </td>
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
@@ -113,4 +111,3 @@
     </section>
 </body>
 </html>
-<a href="/WriterPanel/NewHeading" class="btn btn-primary">Ekle</a>

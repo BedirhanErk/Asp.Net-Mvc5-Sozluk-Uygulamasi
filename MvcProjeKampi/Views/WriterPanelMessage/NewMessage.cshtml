@@ -3,6 +3,9 @@
     ViewBag.Title = "NewMessage";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
+<br />
+<h3>Yeni Mesaj Sayfası</h3>
+<br />
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,16 +17,7 @@
     <script src="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini">
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Yeni Mesaj Sayfası</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+<body class="hold-transition sidebar-mini">    
     <section class="content">
         <div class="row">
             @Html.Action("WriterLeftMenuPartial", "WriterPanelMessage")
@@ -45,18 +39,10 @@
                                 <textarea name="MessageContent" id="compose-textarea" class="form-control" style="height: 300px" placeholder="Mesajınız">                                            
                             </textarea>
                             </div>
-                            <div class="form-group">
-                                <div class="btn btn-default btn-file">
-                                    <i class="fas fa-paperclip"></i> Dosya Ekle
-                                    <input type="file" name="attachment">
-                                </div>
-                                <p class="help-block">Max. 32MB</p>
-                            </div>
                         </div>
                         <div class="card-footer">
                             <div class="float-right">
                                 <button type="submit" class="btn btn-default" name="action:SaveDraft"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
-
                                 <button type="submit" class="btn btn-primary" name="action:NewMessage"><i class="far fa-envelope"></i> Gönder</button>
                             </div>
                             <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> İptal Et</button>

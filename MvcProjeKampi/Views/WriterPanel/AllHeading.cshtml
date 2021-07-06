@@ -7,15 +7,18 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 @{ string color = "";}
-
+<br />
+<h3>
+    Başlıklar
+</h3>
+<br />
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
-    <br />
     <section class="content">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Başlıklarım</h3>
+                <h3 class="card-title">Başlıklar</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -29,9 +32,6 @@
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
-                            <th style="width: 1%">
-                                #
-                            </th>
                             <th style="width: 25%">
                                 Başlık Adı
                             </th>
@@ -68,9 +68,6 @@
                             }
                             <tr>
                                 <td>
-                                    @item.HeadingId
-                                </td>
-                                <td>
                                     <a>
                                         @item.HeadingName
                                     </a>
@@ -82,7 +79,14 @@
                                 <td>
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
+                                            @if (item.Writer.WriterImage == null)
+                                            {
+                                            <img alt="Avatar" class="table-avatar" src="~/Themes/Images/user.png" />
+                                            }
+                                            else
+                                            {
+                                                <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
+                                            }
                                         </li>
                                     </ul>
                                 </td>

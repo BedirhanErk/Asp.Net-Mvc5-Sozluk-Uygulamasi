@@ -16,7 +16,7 @@
         @Html.Label("Kategori")
         @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
         <br />
-        <button class="btn btn-primary">Ekle</button>
-        <a href="/WriterPanel/WriterHeading" class="btn btn-warning">Geri Dön</a>
+        <button class="btn btn-primary"><i class="fas fa-plus"></i> Ekle</button>
+        <a href="/WriterPanel/WriterHeading" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>
     </div>
 }
