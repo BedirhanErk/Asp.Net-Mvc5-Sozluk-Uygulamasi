@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -15,9 +17,9 @@ namespace MvcProjeKampi.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var categoryvalues = cm.GetList();
+            var categoryvalues = cm.GetList().ToPagedList(page, 10);
             return View(categoryvalues);
         }
         [HttpGet]

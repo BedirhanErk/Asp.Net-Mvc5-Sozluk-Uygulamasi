@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h1>Başlık Güncelleme</h1>
+<h3>Başlık Güncelleme</h3>
 <br />
 @using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
 {
@@ -22,6 +22,7 @@
         @Html.Label("Kategori")
         @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
         <br />
-        <button class="btn btn-primary">Güncelle</button>
+        <button class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> Güncelle</button>
+        <a href="/Heading/Index" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>
     </div>
 }

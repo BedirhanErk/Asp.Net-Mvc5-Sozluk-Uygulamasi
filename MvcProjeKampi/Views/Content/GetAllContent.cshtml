@@ -5,13 +5,16 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
+<h3>Yazılar</h3>
+<br />
 @using (Html.BeginForm("GetAllContent","Content",FormMethod.Post))
 {
     <p>
-        Aranacak Kelime: @Html.TextBox("p")
+        <strong>Aranacak Kelime:</strong> @Html.TextBox("p")
         <input type="submit" value="Ara"/>
     </p>
 }
+<br />
 @foreach (var x in Model)
 {
     <p>@x.ContentValue</p>

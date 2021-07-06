@@ -23,7 +23,7 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetListDraft(string p)
         {
-            return _messageDal.List(x => x.Draft == true && x.SenderMail == p && x.SenderStatus == false).OrderByDescending(y=>y.MessageDate).ToList();
+            return _messageDal.List(x => x.Draft == true && x.SenderMail == p && x.SenderStatus == true && x.ReceiverDelete == false).OrderByDescending(y=>y.MessageDate).ToList();
         }
 
         public List<Message> GetListInbox(string p)

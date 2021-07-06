@@ -113,8 +113,9 @@ namespace MvcProjeKampi.Controllers
         {
             var sender = (string)Session["AdminUserName"];
             msg.Draft = true;
+            msg.SenderStatus = true;
             msg.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            msg.SenderMail = sender;
+            msg.SenderMail = sender;          
             mm.MessageAdd(msg);
             return RedirectToAction("GetListDraft");
         }

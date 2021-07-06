@@ -5,14 +5,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>Yazar Güncelleme</h2>
+<h3>Yazar Güncelleme</h3>
 <br />
 @using (Html.BeginForm("EditWriter", "Writer", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
-        @Html.Label("Yazar Id")
-        @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
-        <br />
+        @Html.HiddenFor(x => x.WriterId)
         @Html.Label("Yazar Adı")
         @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterName, "", new { @style = "color:red" })
@@ -44,8 +42,8 @@
         @Html.TextAreaFor(x => x.WriterAbout, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterAbout, "", new { @style = "color:red" })
         <br />
-        <button class="btn btn-primary">Güncelle</button>
-        <a href="/Writer/Index" class="btn btn-warning">Geri Dön</a>
+        <button class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> Güncelle</button>
+        <a href="/Writer/Index" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>
     </div>
 }
 

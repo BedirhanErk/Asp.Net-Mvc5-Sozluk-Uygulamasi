@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -15,9 +17,9 @@ namespace MvcProjeKampi.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         WriterManager wm = new WriterManager(new EfWriterDal());
 
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var results = hm.GetList();
+            var results = hm.GetList().ToPagedList(page, 8);
             return View(results);
         }
         public ActionResult HeadingReport()
@@ -48,6 +50,7 @@ namespace MvcProjeKampi.Controllers
         public ActionResult AddHeading(Heading heading)
         {
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            heading.HeadingStatus = true;
             hm.HeadingAdd(heading);
             return RedirectToAction("Index");
         }

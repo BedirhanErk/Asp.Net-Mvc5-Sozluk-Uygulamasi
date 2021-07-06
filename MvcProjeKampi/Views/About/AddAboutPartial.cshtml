@@ -1,5 +1,5 @@
-﻿<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
-    Ekle
+﻿<button class="btn btn-primary"  style="margin-left:25px;position:absolute;right:10px" data-toggle="modal" data-target="#Modal1">
+    <i class="fas fa-plus"></i> Ekle
 </button>
 
 <div class="modal" id="Modal1">
@@ -10,19 +10,19 @@
             </div>
             <form method="post" action="/About/AddAbout">
                 <div class="modal-body">
-                    <label>Hakkımızda Metin 1</label>
+                    <label>Başlık</label>
                     <input type="text" name="AboutDetails1" class="form-control" />
                     <br />
-                    <label>Hakkımızda Metin 2</label>
+                    <label>Açıklama</label>
                     <input type="text" name="AboutDetails2" class="form-control" />
                     <br />
-                    <label>Hakkımızda Görsel 1</label>
+                    <label>Görsel 1</label>
                     <input type="text" name="AboutImage1" class="form-control" />
                     <br />
-                    <label>Hakkımızda Görsel 2</label>
+                    <label>Görsel 2</label>
                     <input type="text" name="AboutImage2" class="form-control" />
                     <br />
-                    <button class="btn btn-primary">Kaydet</button>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Ekle</button>
                 </div>
             </form>
         </div>

@@ -5,21 +5,14 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
+<h3>
+    Yazarlar
+    <a href="/Writer/AddWriter" style="margin-left:25px;position:absolute;right:10px"><i class="fas fa-plus"></i> Ekle</a>
+</h3>
+<br />
 <!DOCTYPE html>
 <html>
-<body class="hold-transition sidebar-mini">
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>
-                        Yazarlar
-                        <a href="/Writer/AddWriter" style="margin-left:25px"><i class="fas fa-plus"></i> Ekle</a>
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </section>
+<body class="hold-transition sidebar-mini"> 
     <section class="content">
         <div class="card card-solid">
             <div class="card-body pb-0">
@@ -41,13 +34,20 @@
                                             </ul>
                                         </div>
                                         <div class="col-5 text-center">
-                                            <img src="@writer.WriterImage" alt="" class="img-circle img-fluid">
+                                            @if (writer.WriterImage == null)
+                                            {
+                                            <img class="img-circle img-fluid" src="~/Themes/Images/user.png" />
+                                            }
+                                            else
+                                            {
+                                                <img src="@writer.WriterImage" alt="" class="img-circle img-fluid">
+                                            }
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-footer">
                                     <div class="text-right">
-                                        <a href="#" class="btn btn-sm bg-teal">
+                                        <a href="/Heading/Index" class="btn btn-sm bg-teal">
                                             <i class="fas fa-comments"></i> Yazarın Başlıkları
                                         </a>
                                         <a href="/Writer/EditWriter/@writer.WriterId" class="btn btn-sm btn-primary">

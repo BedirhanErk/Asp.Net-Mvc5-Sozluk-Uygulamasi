@@ -3,37 +3,26 @@
     ViewBag.Title = "TrashDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<br />
+<h3>Mesaj Detayları</h3>
+<br />
 <html>
-<body class="hold-transition sidebar-mini">
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Mesaj Detayları</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+<body class="hold-transition sidebar-mini">    
     <section class="content">
         <div class="row">
             @Html.Action("LeftMenuPartial", "Contact")
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Mesaj</h3>
-                        <div class="card-tools">
-                            <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
-                            <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
-                        </div>
+                        <h3 class="card-title">Mesaj</h3>                       
                     </div>
                     <div class="card-body p-0">
                         <div class="mailbox-read-info">
                             <h5>@Model.Subject</h5>
                             <br />
                             <h6>
-                                @*NOTE: Session'dan al*@
                                 Mail:
-                                @if (Model.SenderMail == "admin@gmail.com")
+                                @if (Model.SenderMail == (string)Session["AdminUserName"])
                                 {
                                     @Model.ReceiverMail
                                 }
@@ -41,7 +30,6 @@
                                 {
                                     @Model.SenderMail
                                 }
-
                                 <span class="mailbox-read-time float-right">@Model.MessageDate.ToString("dd/MMMM/yyy")</span>
                             </h6>
                         </div>
@@ -51,11 +39,9 @@
                     </div>
                     <div class="card-footer">
                         <div class="float-right">
-                            <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Reply</button>
-                            <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Forward</button>
-                        </div>
-                        <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</button>
-                        <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+                            <a href="/Message/NewMessage" class="btn btn-default"><i class="fas fa-reply"></i> Reply</a>
+                            <a href="/Message/Delete/@Model.MessageId" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</a>
+                        </div>                       
                     </div>
                 </div>
             </div>
@@ -63,4 +49,3 @@
     </section>
 </body>
 </html>
-

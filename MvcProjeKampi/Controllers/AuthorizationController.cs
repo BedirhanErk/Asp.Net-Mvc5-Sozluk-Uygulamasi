@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -15,9 +17,9 @@ namespace MvcProjeKampi.Controllers
     {
         AdminManager adminManager = new AdminManager(new EfAdminDal());
         IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()), new WriterManager(new EfWriterDal()));
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var values = adminManager.GetList();
+            var values = adminManager.GetList().ToPagedList(page, 10);
             return View(values);
         }
         [HttpGet]

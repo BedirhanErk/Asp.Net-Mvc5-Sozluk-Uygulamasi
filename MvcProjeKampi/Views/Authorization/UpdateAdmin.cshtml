@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>Admin Güncelleme</h2>
+<h3>Admin Güncelleme</h3>
 <br />
 @using (Html.BeginForm("UpdateAdmin", "Authorization", FormMethod.Post))
 {
@@ -14,15 +14,14 @@
         @Html.HiddenFor(x => x.AdminPasswordSalt)
         @Html.HiddenFor(x => x.AdminUserName)
         @Html.HiddenFor(x => x.AdminStatus)
-        <br />
         @Html.Label("Admin Adı")
         @Html.TextBoxFor(x => x.AdminName, new { @class = "form-control" })
         <br />
         @Html.Label("Admin Rolü")
         @Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })
         <br />
-        <button class="btn btn-primary">Güncelle</button>
-        <a href="/Authorization/Index" class="btn btn-warning">Geri Dön</a>
+        <button class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> Güncelle</button>
+        <a href="/Authorization/Index" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>
     </div>
 }
 

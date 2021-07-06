@@ -115,6 +115,7 @@ namespace MvcProjeKampi.Controllers
         {
             string sender = (string)Session["WriterMail"];
             msg.Draft = true;
+            msg.SenderStatus = true;
             msg.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             msg.SenderMail = sender;
             mm.MessageAdd(msg);

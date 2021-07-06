@@ -6,15 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
     public class AboutController : Controller
     {
         AboutManager abm = new AboutManager(new EfAboutDal());
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var aboutValues = abm.GetList();
+            var aboutValues = abm.GetList().ToPagedList(page, 10);
             return View(aboutValues);
         }
         [HttpGet]

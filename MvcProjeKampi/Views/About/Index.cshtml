@@ -1,22 +1,29 @@
 ﻿@using EntityLayer.Concrete
-@model List<About>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<About>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>Hakkımızda</h2>
+<h3>
+    Hakkımızda
+    @Html.Action("AddAboutPartial", "About")
+</h3>
+<br />
 <table class="table table-bordered table-hover">
     <tr>
-        <th>Id</th>
-        <th>Hakkımda Başlık</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
         <th>Durum</th>
+        <th>İşlemler</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.AboutId</td>
             <td>@item.AboutDetails1</td>
+            <td>@item.AboutDetails2</td>
             <td>
                 @if (item.Status == true)
                 {
@@ -39,4 +46,10 @@
         </tr>
     }
 </table>
-@Html.Action("AddAboutPartial", "About")
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    {
+        "page-link"
+    }
+})

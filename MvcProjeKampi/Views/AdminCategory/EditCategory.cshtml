@@ -4,22 +4,20 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2>Kategori Güncelleme</h2>
+<h3>Kategori Güncelleme</h3>
 <br />
 @using (Html.BeginForm("EditCategory", "AdminCategory", FormMethod.Post))
 {
     <div class="form-group">
-        @Html.Label("Kategori Id")
-        @Html.TextBoxFor(x => x.CategoryId, new { @class="form-control"})
-        <br />
+        @Html.HiddenFor(x => x.CategoryId)
         @Html.Label("Kategori Adı")
         @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
         <br />
         @Html.Label("Kategori Açıklaması")
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         <br />
-        <button class="btn btn-primary">Güncelle</button>
-        <a href="/AdminCategory/Index" class="btn btn-warning">Geri Dön</a>
+        <button class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> Güncelle</button>
+        <a href="/AdminCategory/Index" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>
     </div>
 }
 

@@ -1,27 +1,39 @@
 ﻿@using EntityLayer.Concrete
-@model List<Category> 
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
+<h3>
+    Kategoriler
+    <a href="/AdminCategory/AddCategory" style="margin-left:25px;position:absolute;right:10px"><i class="fas fa-plus"></i> Ekle</a>
+</h3>
+<br />
 <table class="table table-bordered table-hover">
     <tr>
         <th>Sil</th>
-        <th>#</th>
         <th>Kategori Adı</th>
-        <th>Güncelle</th>
-        <th>Başlıklar</th>
+        <th>İşlemler</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td><a href="/AdminCategory/DeleteCategory/@item.CategoryId" style="color:red"><strong>X</strong></a></td>
-            <th>@item.CategoryId</th>
             <td>@item.CategoryName</td>
-            <td><a href="/AdminCategory/EditCategory/@item.CategoryId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="#" class="btn btn-info">Başlıklar</a></td>
+            <td>
+                <a style="margin-right:5px" href="/AdminCategory/EditCategory/@item.CategoryId" class="btn btn-secondary btn-sm"><i class="fas fa-pencil-alt"></i> Güncelle</a>
+                <a href="/Heading/Index" class="btn btn-info btn-sm"><i class="fas fa-quote-left"></i> Başlıklar</a>
+            </td>
         </tr>
     }
 </table>
-<a href="/AdminCategory/AddCategory" class="btn btn-primary">Ekle</a>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    {
+        "page-link"
+    }
+})

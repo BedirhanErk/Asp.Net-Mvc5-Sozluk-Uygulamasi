@@ -224,6 +224,7 @@
     <Content Include="Themes\Images\Gaziantep 2.jpg" />
     <Content Include="Themes\Images\Gaziantep.jpg" />
     <Content Include="Themes\Images\Giresun.jpg" />
+    <Content Include="Themes\Images\user.png" />
     <Content Include="Themes\Images\Çanakkale.jpg" />
     <Content Include="Themes\login-form-20\css\bootstrap.min.css" />
     <Content Include="Themes\login-form-20\css\bootstrap\mixins\_border-radius.css" />

@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h1>Yeni Yazar Ekle</h1>
+<h3>Yeni Yazar Ekle</h3>
 <br />
 @using (Html.BeginForm("AddWriter", "Writer", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -40,7 +40,7 @@
         @Html.TextAreaFor(x => x.WriterAbout, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterAbout, "", new { @style = "color:red" })
         <br />
-        <button class="btn btn-primary">Ekle</button>
-        <a href="/Writer/Index" class="btn btn-warning">Geri Dön</a>
+        <button class="btn btn-primary"><i class="fas fa-plus"></i> Ekle</button>
+        <a href="/Writer/Index" class="btn btn-warning"><i class="fas fa-backward"></i> Geri Dön</a>
     </div>
 }
