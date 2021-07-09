@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using DataAccessLayer.Concrete;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -89,6 +90,6 @@ namespace MvcProjeKampi.Controllers
 
             hm.HeadingDelete(heading);
             return RedirectToAction("Index");
-        }
+        }     
     }
 }

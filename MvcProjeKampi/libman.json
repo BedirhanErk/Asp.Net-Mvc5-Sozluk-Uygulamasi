@@ -1,5 +1,11 @@
 {
   "version": "1.0",
   "defaultProvider": "cdnjs",
-  "libraries": []
+  "libraries": [
+    {
+      "provider": "jsdelivr",
+      "library": "fullcalendar@5.8.0",
+      "destination": "lib/fullcalendar/"
+    }
+  ]
 }

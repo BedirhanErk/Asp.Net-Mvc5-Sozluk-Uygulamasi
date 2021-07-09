@@ -43,7 +43,7 @@ namespace MvcProjeKampi.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Headings","Default");
+            return RedirectToAction("HomePage","Home");
         }
         [HttpGet]
         public ActionResult WriterLogin()
@@ -69,7 +69,7 @@ namespace MvcProjeKampi.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Headings","Default");
+            return RedirectToAction("HomePage","Home");
         }
     }
 }

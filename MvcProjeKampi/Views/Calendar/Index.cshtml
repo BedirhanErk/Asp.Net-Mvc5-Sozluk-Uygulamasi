@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/fullcalendar.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container"><div id="calendar"></div></div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/Scripts/fullcalendar/locale/tr.js"></script>
+    <script src="~/Scripts/fullcalendar/locale-all.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            GetCalenderEvents();
+        });
+
+        function GetCalenderEvents() {
+            debugger;
+            $('#calendar').fullCalendar({
+                lang: 'tr',
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                firstDay: 1,
+                slotMinutes: 60,
+                events: '/Calendar/GetCalenderEvents/',
+                eventClick: function (event) {
+                    alert("\nItem Title: " + event.title);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
