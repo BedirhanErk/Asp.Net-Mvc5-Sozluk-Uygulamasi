@@ -153,6 +153,6 @@ Admin Panelindeki sayfalar şu şekildedir
  
  **Proje linki** : http://bedirhanerk-001-site1.etempurl.com/
  
-Proje Bitirme Sertfikası:
+Proje Bitirme Sertifikası:
 
 ![BEDİRHAN ERKILIÇ](https://user-images.githubusercontent.com/65186980/125415860-76fd5fc5-9747-4f34-938c-eccb98e05be4.jpg)
